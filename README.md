@@ -10,6 +10,8 @@ when the component is destroyed.
 A decorator for class property, which automatically calls unsubscribe() on that property value
 when the component is destroyed (when ngOnDestroy is called).
 
+When you re-assign the property value, the old one will automatically be unsubscribed as well.
+
 ```typescript
 @Component({
     template: 'Hi'
@@ -21,6 +23,11 @@ class MyComponent {
     private sub: Subscription;
 
     constructor() {
+        this.sub = this.data.subscribe((next) => {
+        
+        });
+        
+        //old one will be unsubscribed as well
         this.sub = this.data.subscribe((next) => {
         
         });
