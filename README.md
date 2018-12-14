@@ -7,7 +7,8 @@ when the component is destroyed.
 
 ## `unsubscribe()` decorator
 
-Allows to collect multiple subscriptions in one collection to simplify code.
+A decorator for class property, which automatically calls unsubscribe() on that property value
+when the component is destroyed (when ngOnDestroy is called).
 
 ```typescript
 @Component({
@@ -29,8 +30,7 @@ class MyComponent {
 
 ## `Subscriptions` class
 
-A decorator for class property, which automatically calls unsubscribe() on that property value
-when the component is destroyed (when ngOnDestroy is called)
+Allows to collect multiple subscriptions in one collection to simplify code.
 
 ```typescript
 @Component({
